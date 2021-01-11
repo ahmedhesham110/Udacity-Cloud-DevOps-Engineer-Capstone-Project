@@ -11,7 +11,11 @@ pipeline {
       steps {
         withCredentials(bindings: [[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'hesham110', passwordVariable: 'Ahmed_123']]) {
           sh '''
-						docker build -t hesham110/udacity-capstone .
+						
+            docker build --tag=hesham110/udacity-capstone .
+            docker image ls
+            docker run -p 8000:80 hesham110/udacity-capstone
+
 					'''
         }
 
