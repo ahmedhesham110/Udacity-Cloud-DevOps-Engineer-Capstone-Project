@@ -14,7 +14,7 @@ pipeline {
 						
             docker build --tag=hesham110/udacity-capstone .
             docker image ls
-            docker run -p 8000:80 hesham110/udacity-capstone
+            
 
 					'''
         }
