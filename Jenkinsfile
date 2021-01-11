@@ -26,7 +26,8 @@ pipeline {
       steps {
         withCredentials(bindings: [[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'hesham110', passwordVariable: 'Ahmed_123']]) {
           sh '''
-						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+						
+            docker login --username hesham110 --password Ahmed_123
 						docker push hesham110/udacity-capstone
 					'''
 				}
